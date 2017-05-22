@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Neighborhood Map | Udacity Project">
+    <title>Neighborhood Map</title>
+    <link rel="stylesheet" href="css/styles.css">
+
+</head>
+
+<body>
+
+    <div class="data" data-bind="visible: showMenu">
+        <h1>Exploring <span data-bind="text: cityName"></span> Neighborhood</h1>
+        <div class="weather-information">
+            <img alt="Weather Icon" src="img/error.png" data-bind="attr: {src: weatherIcon}">
+            <p data-bind="text: weatherCondition"></p>
+            <p data-bind="visible: weatherError" class="weatherErrorText">Weather Data not found!!</p>
+        </div>
+        <div class="filterForm" data-bind="visible: data().length != 0">
+            <form data-bind="submit: filterList">
+                <input data-bind="attr: {placeholder: placeHolderText}, textInput: filterText">
+                <button type="submit">Filter</button>
+            </form>
+        </div>
+        <div class="poi">
+            <p data-bind="visible: data().length == 0">No Data Found!!
+                <br> Please Select another location</p>
+            <ul data-bind="foreach: data">
+                <li data-bind="click: $parent.selectMarker.bind($data, $index())">
+                    <p data-bind="text: $data.name"></p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="map" class="myMap"></div>
+    <p class="menu-icon" data-bind="click: toggleMenu">&#9776;</p>
+    <div>
+        <p class="attribution-icon" data-bind="click: toggleAttribution">ℹ</p>
+        <div class="attribution" data-bind="visible: showAttribution">
+            <h2>This website would not have been possible without: </h2>
+            <ul>
+                <li><a href="https://developers.google.com/maps/">Google Maps</a>:
+                    Map</li>
+                <li><a href="https://developer.foursquare.com">FOURSQUARE</a>: POIs
+                    Data</li>
+                <li><a href="https://www.apixu.com/api.aspx">APIXU</a>: Weather Data</li>
+                <li><a href="https://ipinfo.io/developers">Ipinfo</a>: Location using IP address</li>
+                <li><a href="https://snazzymaps.com/style/38/shades-of-grey">"Shades of Grey" by Adam Krogh</a>: Map Style</li>
+            </ul>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"
+        async defer onerror="googleMapErrorHandler()"></script>
+</body>
+
+</html>

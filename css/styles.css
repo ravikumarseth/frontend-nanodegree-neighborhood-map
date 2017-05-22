@@ -1,0 +1,182 @@
+.menu-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 4;
+  padding: 0 5px;
+  margin: 0;
+  font-weight: bold;
+  background-color: aquamarine;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.data {
+  text-align: center;
+  background-color: aquamarine !important;
+  position: absolute;
+  background: #fff;
+  top: 0;
+  left: 0;
+  max-width: 350px;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-around;
+  overflow-y: hidden;
+}
+
+.data h1 {
+  margin: 20px auto;
+  font-size: 1.5em;
+  padding: 20px 40px 0;
+}
+
+.data h1 span {
+  display: block;
+}
+
+.weather-information {
+  width: 100%;
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.weather-information p {
+  line-height: 64px;
+  margin: 0;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 1.2em;
+}
+
+.weatherErrorText {
+  font-size: 1em !important;
+  line-height: 1.2em !important;
+}
+
+.filterForm {
+  margin: auto;
+}
+
+input {
+  padding: 5px;
+  margin: 10px;
+  width: 220px;
+  border-radius: 5px;
+}
+
+button {
+  border: none;
+  padding: 10px;
+  margin: 10px;
+  background-color: black;
+  color: aliceblue;
+  font-weight: bold;
+  border-radius: 5px;
+  text-transform: uppercase;
+}
+
+.poi {
+  width: 100%;
+  height: calc(100vh - 220px);
+  padding: 0 0 20px;
+}
+
+.poi p {
+  font-weight: bold;
+}
+
+.data ul {
+  width: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0 0 10px 0;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.data ul li {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/*Styling for responsive design*/
+
+@media screen and (max-width: 550px) {
+    
+  .data {
+    max-width: 100%;
+  }  
+    
+  .attribution {
+    max-width: 100%;
+  }
+    
+}
+
+/*Attribution Window Styling*/
+
+.attribution {
+  z-index: 1;
+  max-width: 400px;
+  background-color: aquamarine;
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-align: center;
+}
+
+.attribution h2 {
+  font-size: 1em;
+  margin: 30px 30px 0 30px;
+}
+
+.attribution ul {
+  list-style: none;
+}
+
+.attribution ul a {
+  color: black;
+  font-weight: bold;
+}
+
+.attribution-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 3;
+  padding: 0 10px;
+  margin: 0;
+  font-weight: bold;
+  background-color: aquamarine;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+/*Map Content Styling*/
+
+.myMap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+/*Infowindow Styling*/
+.infowindow {
+  max-width: 300px;
+  max-height: 300px;
+}
+
+.infowindow h1 {
+  font-size: 1.2em;
+}
+
+.infowindow h1 a {
+  color: black;
+}
